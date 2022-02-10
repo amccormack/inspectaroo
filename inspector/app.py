@@ -40,6 +40,7 @@ def process_message(message_body: str):
         bucket = record["s3"]["bucket"]["name"]
         key = record["s3"]["object"]["key"]
         print(bucket, key)
+        process_file(bucket, key)
 
 def process_file(bucket, key):
     s3 = boto3.client("s3")
